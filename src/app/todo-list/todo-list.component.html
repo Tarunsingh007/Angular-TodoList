@@ -1,0 +1,31 @@
+<ul style="list-style: none;">
+  <p *ngIf="!todosList">No todos</p>
+
+  <li *ngFor="let todo of todosList" class="w-75 mb-2 p-2">
+    <div class="p-3" *ngIf="!todo.completed else notcompleted" style="background-color: #f2f2f2;">
+      <p><span>{{todo.todoId}}</span>
+        <span style="margin-left: 10px; width: 150px;" class="lead">{{todo.todo}}</span>
+        <span style="margin-right:10px; float:right "><span class="delete" (click)="deleteTodo(todo.todoId)" style="font-weight: 600;">x</span></span>
+        <span style="margin-right:-10px; margin-top: 30px; float:right "><button class="btn btn-primary" (click)="checkTodo(todo)" style="font-weight: 600;">Done</button></span>
+      </p>
+      <p style="font: 800; margin-left: 10px;">CreatedOn: {{todo.date}}</p>
+    </div>
+    <ng-template #notcompleted>
+      <div class="p-3" style="background-color:red;">
+        <p><span>{{todo.todoId}}</span>
+          <span style="margin-left: 10px; width: 150px;" class="lead">{{todo.todo}}</span>
+          <span style="margin-right:10px; float:right "><span class="delete" (click)="deleteTodo(todo.todoId)" style="font-weight: 600;">x</span></span>
+          <span style="margin-right:-10px; margin-top: 30px; float:right "><button class="btn btn-danger" (click)="checkTodo(todo)" style="font-weight: 600;">UnDone</button></span>
+        </p>
+        <p style="font: 800; margin-left: 10px;">CreatedOn: {{todo.date}}</p>
+      </div>
+    </ng-template>
+  </li>
+</ul>
+<style>
+  .delete:hover{
+    cursor: pointer;
+    color: red;
+    transform: scale(1.2);
+  }
+</style>

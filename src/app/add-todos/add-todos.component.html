@@ -1,0 +1,9 @@
+<div class="container" style="margin-top:50px">
+    <div class="form-group">
+    <label class="lead m-1">Please add the todo: </label>
+    <input type="text" [(ngModel)]="todoText" class="form-control"  (keyup.enter)="send()" style="width:50%">
+    <p style="font-weight: 600; font-size: 11px;" class="m-1 p-0"> Press enter to add todo</p>
+    <p class="alert alert-success" *ngIf="confirmationMessage"  style="width:50%">{{confirmationMessage}}</p>
+    <p class="alert alert-danger" *ngIf="emptyMessage"  style="width:50%">{{emptyMessage}}</p>
+  </div>
+</div>

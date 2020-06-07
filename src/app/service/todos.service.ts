@@ -12,7 +12,7 @@ export class TodosService {
   newtodo;
   completed:boolean=false;
   d=this.date.toString().split(" ");
-  todos=[{todoId:1,completed:this.completed,todo:"asdasd",date:`${this.d[0]} ${this.d[1]} ${this.d[2]} ${this.d[3]} at ${this.d[4]}`},{todoId:2,completed:this.completed,todo:"asdlllasd",date:`${this.d[0]} ${this.d[1]} ${this.d[2]} ${this.d[3]} at ${this.d[4]}`}];
+  todos=[{todoId:1,completed:this.completed,todo:"something to be done.",date:`${this.d[0]} ${this.d[1]} ${this.d[2]} ${this.d[3]} at ${this.d[4]}`}];
 
   constructor() { }
 
